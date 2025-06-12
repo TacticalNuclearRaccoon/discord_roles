@@ -31,7 +31,7 @@ f4 = st.slider("Être indépendant est important pour moi.", 0, 7, 1)
 st.header("Disrupteur")
 d1 = st.slider("J'aime provoquer.", 0, 7, 1)
 d2 = st.slider("J'aime remettre en question les choses.", 0, 7, 1)
-d3 = st.slider("Je me considère comme un rebelle.", 0, 5, 1)
+d3 = st.slider("Je me considère comme un rebelle.", 0, 7, 1)
 d4 = st.slider("Je n'aime pas suivre les règles.", 0, 7, 1)
 
 st.header("Achiever")   
