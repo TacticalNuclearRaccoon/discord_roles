@@ -9,32 +9,32 @@ achiever = 0
 
 st.title("Questionnaire sur les Rôles pour la Communauté des Vigies")
 
-st.write("Choisissez une réponse de 1 à 5 pour chaque question: 1 = pas du tout, 5 = complètement")
-st.header("Philanthrope")
+st.write("Choisissez une réponse de 1 à 7 pour chaque question: 0 = pas du tout, 7 = complètement")
+#st.header("Philanthrope")
 p1 = st.slider("Cela me rend heureux si je peux aider les autres", 0, 7, 1)
 p2 = st.slider("J'aime aider les autres à s'orienter dans de nouvelles situations.", 0, 7, 1)
 p3 = st.slider("J'aime partager mes connaissances.", 0, 7, 1)
 p4 = st.slider("Le bien-être des autres est important pour moi.", 0, 7, 1)
 
-st.header("Socialiseur")
+#st.header("Socialiseur")
 s1 = st.slider("Interagir avec les autres est important pour moi.", 0, 7, 1)
 s2 = st.slider("J'aime faire partie d'une équipe.", 0, 7, 1)
 s3 = st.slider("Il est important pour moi de me sentir membre d'une communauté.", 0, 7, 1)
 s4 = st.slider("J'apprécie les activités de groupe.", 0, 7, 1)
 
-st.header("Esprit Libre")
+#st.header("Esprit Libre")
 f1 = st.slider("Il est important pour moi de suivre mon propre chemin.", 0, 7, 1)
 f2 = st.slider("Je suis souvent guidé par ma curiosité.", 0, 7, 1)
 f3 = st.slider("J'aime essayer de nouvelles choses.", 0, 7, 1)
 f4 = st.slider("Être indépendant est important pour moi.", 0, 7, 1)
 
-st.header("Disrupteur")
+#st.header("Disrupteur")
 d1 = st.slider("J'aime provoquer.", 0, 7, 1)
 d2 = st.slider("J'aime remettre en question les choses.", 0, 7, 1)
 d3 = st.slider("Je me considère comme un rebelle.", 0, 7, 1)
 d4 = st.slider("Je n'aime pas suivre les règles.", 0, 7, 1)
 
-st.header("Achiever")   
+#st.header("Achiever")   
 a1 = st.slider("J'aime surmonter les obstacles.", 0, 7, 1)
 a2 = st.slider("Il est important pour moi de toujours accomplir mes tâches complètement.", 0, 7, 1)
 a3 = st.slider("Il m'est difficile d'abandonner un problème avant d'avoir trouvé une solution.", 0, 7, 1)
@@ -68,7 +68,3 @@ st.write(f"""Vos 3 rôles les plus forts sont :
          * {sorted_results[4]},
          * {sorted_results[3]},
          * et {sorted_results[2]}""")
-
-
-
-
