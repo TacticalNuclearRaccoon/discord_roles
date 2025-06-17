@@ -68,7 +68,3 @@ st.write(f"""Vos 3 rôles les plus forts sont :
          * {sorted_results[4]},
          * {sorted_results[3]},
          * et {sorted_results[2]}""")
-
-
-
-
