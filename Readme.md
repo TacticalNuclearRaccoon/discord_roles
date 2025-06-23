@@ -19,7 +19,7 @@ This project provides an interactive web application that allows users to assess
 ## Installation
 1. **Clone the repository**
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/TacticalNuclearRaccoon/discord_roles.git
    cd discord_roles
    ```
 2. **Install dependencies**
