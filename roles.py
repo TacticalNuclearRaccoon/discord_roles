@@ -122,7 +122,7 @@ if termine:
         st.markdown(description_socialiseur, unsafe_allow_html=True)
     elif sorted_results[4] == "réalisateur":
         st.header("Votre rôle principal est : Réalisateur")
-        st.wrimarkdownte(description_realisateur, unsafe_allow_html=True)
+        st.markdown(description_realisateur, unsafe_allow_html=True)
     elif sorted_results[4] == "esprit libre":
         st.header("Votre rôle principal est : Esprit Libre")
         st.markdown(description_esprit_libre, unsafe_allow_html=True)
@@ -162,4 +162,4 @@ if termine:
         st.markdown(description_esprit_libre, unsafe_allow_html=True)
     elif sorted_results[2] == "disrupteur":
         st.header("Votre troisième rôle est : Disrupteur")
-        st.wrimarkdownte(description_disrupteur, unsafe_allow_html=True)                        
+        st.markdown(description_disrupteur, unsafe_allow_html=True)                        
