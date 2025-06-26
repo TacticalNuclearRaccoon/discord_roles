@@ -5,7 +5,7 @@ philanthrophe = 0
 socialiseur = 0
 esprit_libre = 0
 disrupteur = 0
-achiever = 0
+realisateur = 0
 
 st.title("Questionnaire sur les Rôles pour la Communauté des Vigies")
 
@@ -34,7 +34,7 @@ d2 = st.slider("J'aime remettre en question les choses.", 0, 7, 0)
 d3 = st.slider("Je me considère comme un rebelle.", 0, 7, 0)
 d4 = st.slider("Je n'aime pas suivre les règles.", 0, 7, 0)
 
-#st.header("Achiever")   
+#st.header("Réalisateur")   
 a1 = st.slider("J'aime surmonter les obstacles.", 0, 7, 0)
 a2 = st.slider("Il est important pour moi de toujours accomplir mes tâches complètement.", 0, 7, 0)
 a3 = st.slider("Il m'est difficile d'abandonner un problème avant d'avoir trouvé une solution.", 0, 7, 0)
@@ -44,27 +44,122 @@ philanthrophe = p1 + p2 + p3 + p4
 socialiseur = s1 + s2 + s3 + s4
 esprit_libre = f1 + f2 + f3 + f4
 disrupteur = d1 + d2 + d3 + d4
-achiever = a1 + a2 + a3 + a4
+realisateur = a1 + a2 + a3 + a4
 
-st.header("Résultats")
-st.write(f"Votre score pour le philanthrope est de {philanthrophe}")
-st.write(f"Votre score pour le socialiseur est de {socialiseur}")
-st.write(f"Votre score pour l'esprit libre est de {esprit_libre}")
-st.write(f"Votre score pour le disrupteur est de {disrupteur}")
-st.write(f"Votre score pour l'achiever est de {achiever}")
-
-results = {"philanthrophe":philanthrophe, "socialiseur":socialiseur, "esprit libre":esprit_libre, "disrupteur":disrupteur, "achiever":achiever}
+results = {"philanthrophe":philanthrophe, "socialiseur":socialiseur, "esprit libre":esprit_libre, "disrupteur":disrupteur, "réalisateur":realisateur}
 sorted_results = sorted(results, key=results.get, reverse=False)
+main_roles = [sorted_results[4], sorted_results[3], sorted_results[2]]
 
-fig, ax = plt.subplots()
-ax.bar(results.keys(), results.values(), color='aliceblue', edgecolor='darkblue')
-ax.set_ylabel('Score')
-ax.set_title('Scores par Rôle')
-plt.xticks(rotation=30)
+termine = st.button("Terminer le questionnaire")
+if termine:
+    st.header("Résultats")
+    st.write(f"Votre score pour le philanthrope est de {philanthrophe}")
+    st.write(f"Votre score pour le socialiseur est de {socialiseur}")
+    st.write(f"Votre score pour l'esprit libre est de {esprit_libre}")
+    st.write(f"Votre score pour le disrupteur est de {disrupteur}")
+    st.write(f"Votre score pour le réalisateur est de {realisateur}")
 
-st.pyplot(fig)
+    fig, ax = plt.subplots()
+    ax.bar(results.keys(), results.values(), color='aliceblue', edgecolor='darkblue')
+    ax.set_ylabel('Score')
+    ax.set_title('Scores par Rôle')
+    plt.xticks(rotation=30)
 
-st.write(f"""Vos 3 rôles les plus forts sont :
-         * {sorted_results[4]},
-         * {sorted_results[3]},
-         * et {sorted_results[2]}""")
+    st.pyplot(fig)
+
+    st.write(f"""Vos 3 rôles les plus forts sont :
+            * {sorted_results[4]},
+            * {sorted_results[3]},
+            * et {sorted_results[2]}""")
+
+    #descriptions des rôles
+    description_philanthrope = """Ils sont altruistes, aiment donner sans attendre de récompense, et valorisent le bien-être des autres.  
+
+:sparkles: Motivés par le but, par le fait de partager, donner...  
+:sparkles: Ils ont besoin de partager leurs connaissances et ont envie d’aider les autres.  
+- Exemples : Dans le Discord ce sont les personnes les plus susceptibles de devenir modérateur, elles sont là pour aider les personnes dans le besoin  
+
+:arrow_forward: Auraient la charge du salon SOS.  
+*Sous rôle :* Soutien"""
+
+    description_socialiseur = """" Ils recherchent l'interaction avec les autres et la création de liens sociaux.
+:sparkles: Motivés par le lien, la connexion sociale…
+- Exemples : Dans le Discord ce sont les personnes qui créent des évènements, réalisent des projets qui rassemble.
+
+:arrow_forward: Pourraient avoir la charge de la partie rencontres et évènements.
+*Sous rôle :* Porteur de voix / Ambassadeur"""
+
+    description_realisateur = """Ils cherchent à progresser, relever des défis, et maîtriser des tâches difficiles.
+:sparkles: Motivés par la compétence…
+:sparkles: Ils ont besoin de quêtes à accomplir et de défis 
+- Exemples : Ce sont les personnes qui sont plus discrètes mais qui montrent le bout de leur nez pour réaliser les défis et obtenir des récompenses comme des badges ou des niveaux.
+
+:arrow_forward: Pourraient être en charge des défis.
+*Sous rôle :* Moteur"""
+
+    description_esprit_libre = """Ils aiment explorer, créer, et agir sans contrainte externe.
+:sparkles: Motivés par l’autonomie…
+:sparkles: Ils ont besoin de personnalisation et de questionner.
+:sparkles: Exemples : Dans le Discord ce sont des vagabonds en recherche d’informations utiles pour eux, ce sont les premiers à poser des questions et ils aiment être challengés.
+:arrow_forward: Pourraient être en charge de remonter des infos.
+*Sous rôle :* Observateur
+    """
+
+    description_disrupteur = """Ils cherchent à perturber le système, soit pour provoquer des changements positifs, soit pour tester ses limites.
+:sparkles: Motivés par le changement...
+:sparkles: Ils ont besoin de créer et d’échanger.
+- Exemples : Dans le Discord ce sont des personnes qui utilisent l’outil de questionnaires, qui ouvrent des débats et essaient de faire changer les états d’esprit
+
+:arrow_forward: Pourraient être en charge de la newsletter collective, et de trouver des thématiques et sujets d’échanges.
+*Sous rôle* : Contributeur"""
+
+    # display main roles
+    if sorted_results[4] == "philanthrophe":
+        st.header("Votre rôle principal est : Philanthrope")
+        st.markdown(description_philanthrope, unsafe_allow_html=True)
+    elif sorted_results[4] == "socialiseur":
+        st.header("Votre rôle principal est : Socialiseur")
+        st.markdown(description_socialiseur, unsafe_allow_html=True)
+    elif sorted_results[4] == "réalisateur":
+        st.header("Votre rôle principal est : Réalisateur")
+        st.wrimarkdownte(description_realisateur, unsafe_allow_html=True)
+    elif sorted_results[4] == "esprit libre":
+        st.header("Votre rôle principal est : Esprit Libre")
+        st.markdown(description_esprit_libre, unsafe_allow_html=True)
+    elif sorted_results[4] == "disrupteur":
+        st.header("Votre rôle principal est : Disrupteur")
+        st.markdown(description_disrupteur,unsafe_allow_html=True)
+
+    #display secondary roles
+    if sorted_results[3] == "philanthrophe":
+        st.header("Votre second rôle est : Philanthrope")
+        st.markdown(description_philanthrope, unsafe_allow_html=True)
+    elif sorted_results[3] == "socialiseur":    
+        st.header("Votre second rôle est : Socialiseur")
+        st.markdown(description_socialiseur, unsafe_allow_html=True)
+    elif sorted_results[3] == "réalisateur":
+        st.header("Votre second rôle est : Réalisateur")
+        st.markdown(description_realisateur, unsafe_allow_html=True)
+    elif sorted_results[3] == "esprit libre":
+        st.header("Votre second rôle est : Esprit Libre")
+        st.markdown(description_esprit_libre, unsafe_allow_html=True)
+    elif sorted_results[3] == "disrupteur":
+        st.header("Votre second rôle est : Disrupteur")
+        st.markdown(description_disrupteur, unsafe_allow_html=True)    
+
+    #display ternary roles
+    if sorted_results[2] == "philanthrophe":
+        st.header("Votre troisième rôle est : Philanthrope")
+        st.markdown(description_philanthrope, unsafe_allow_html=True)
+    elif sorted_results[2] == "socialiseur":
+        st.header("Votre troisième rôle est : Socialiseur")
+        st.markdown(description_socialiseur, unsafe_allow_html=True)
+    elif sorted_results[2] == "réalisateur":
+        st.header("Votre troisième rôle est : Réalisateur")
+        st.markdown(description_realisateur, unsafe_allow_html=True)
+    elif sorted_results[2] == "esprit libre":
+        st.header("Votre troisième rôle est : Esprit Libre")
+        st.markdown(description_esprit_libre, unsafe_allow_html=True)
+    elif sorted_results[2] == "disrupteur":
+        st.header("Votre troisième rôle est : Disrupteur")
+        st.wrimarkdownte(description_disrupteur, unsafe_allow_html=True)                        
